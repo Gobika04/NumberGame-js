@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Number Game</title>
+        <link rel="icon" href="numberimage.jpg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <center>
+            
+            <h1 class="top"> Guess The Number!!</h1> 
+       <hr>
+       
+ 
+        <input id="guessnumber" placeholder="Enter a Number">
+       <button id="btn" onclick="check()">Check</button>
+       <div id="wrongresult">
+
+       </div>
+       
+       <p id="result">TRY IT..YOU WILL DEFENITELY WIN THIS GAME!!!</p>
+       <p id="TotalScore">Total Score:10</p>
+       <script>
+        var guessnumber=document.getElementById("guessnumber");
+        var result=document.getElementById("result");
+        var randomnumber=Math.floor(Math.random()*10)+1;
+        var score=document.getElementById("TotalScore");
+        var btn=document.getElementById("btn");
+        var totalscore=10;
+        var wrongresult=document.getElementById("wrongresult");
+        function check(){
+            var enterednumber = guessnumber.value;
+            btn.style.backgroundColor="yellow";
+            if(randomnumber == enterednumber){
+                console.log("Right");
+                result.textContent="Right"; 
+                result.textContent="YOU ARE LUCKY!!!YOU FOUND A CORRECT NUMBER"; 
+                alert("HURRAY!!! YOU WON...🥳"); 
+                  
+            }
+            else{
+                totalscore=totalscore-1; 
+                score.textContent = "score: "+totalscore;
+                console.log("OOPS!!!  TRY AGAIN...YOU WILL WIN!!!");
+                result.textContent="OOPS!!! TRY AGAIN...YOU WILL WIN!!!";
+                
+                
+            }
+        }
+       
+       </script>
+       
+        </center>
+    </body>
+</html>
